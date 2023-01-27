@@ -43,6 +43,12 @@ public class SearchService extends PageComponent {
     public String checkFullName(){
         return getDriver().findElement(By.xpath("//*[@id=\"__next\"]/div/div[1]/h3")).getText();
     }
+    public String checkLocation(){
+        return getDriver().findElement(By.xpath("//*[@id=\"__next\"]/div/div[1]/div[2]/div/span")).getText();
+    }
+    public String checkEmailAddress(){
+        return getDriver().findElement(By.xpath("//*[@id=\"__next\"]/div/div[1]/div[2]/p")).getText();
+    }
 
     private List<String> getTextValuesFromTitles(List<String> checkList, String HTMLatribute) {
         List<String> listOfResumeTitles = new ArrayList<>();

@@ -2,16 +2,13 @@ package starter.wikipedia.urls;
 
 import net.serenitybdd.core.steps.UIInteractions;
 import net.thucydides.core.annotations.Step;
+import org.junit.jupiter.api.Tag;
 
 
 public class NavigateActions extends UIInteractions {
-    @Step("Navigate to the wiki page")
-    public void toTheWikiPage() {
-        openUrl("http://wikipedia.com/");
-    }
 
     @Step("Navigate to the home page")
     public void toTheHomePage() {
-        openUrl("https://martinpersonalweb.vercel.app/");
+        openUrl( System.getenv("master").equals("false") ? "https://martinpersonalweb.vercel.app/" : "http://localhost:3000/");
     }
 }
