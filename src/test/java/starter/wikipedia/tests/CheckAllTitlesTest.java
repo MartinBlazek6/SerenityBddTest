@@ -3,6 +3,7 @@ package starter.wikipedia.tests;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
@@ -30,12 +31,14 @@ class CheckAllTitlesTest {
 
     private SearchService searchService;
 
-
+    @BeforeEach
+    void beforeEach(){
+        navigate.toTheHomePage();
+    }
     @Test
     void searchForMainTittles() {
         List<String> maintTitles = new ArrayList<>();
         Arrays.stream(Pages.values()).forEach(title->maintTitles.add(title.name().substring(1).toLowerCase()));
-        navigate.toTheHomePage();
         utilStepsService.clickResume(Pages.RESUME);
         Serenity.reportThat("This is checking if Resume,About and Projects buttons are displayed",
                 () -> maintTitles.forEach(title ->assertThat(searchService.titleIsDisplayed(title)).isTrue()));
@@ -45,7 +48,6 @@ class CheckAllTitlesTest {
     void checkAllTittlesOnResumePage() {
         List<String> listOfTitleTextValues
                 = List.of("Education", "Experience", "Language & Framework", "Tools & Softwares");
-        navigate.toTheHomePage();
         utilStepsService.clickResume(Pages.RESUME);
         Serenity.reportThat("This is checking all tittles in Resume page",
                 () -> IntStream.range(0, listOfTitleTextValues
@@ -58,7 +60,6 @@ class CheckAllTitlesTest {
     void checkAllTittlesOnAboutPage() {
         List<String> listOfTitleTextValues
                 = List.of("Automation Testing", "Backend Development", "API Development", "Front End Development");
-        navigate.toTheHomePage();
         utilStepsService.clickResume(Pages.ABOUT);
         Serenity.reportThat("This is checking all tittles in About page",
                 () -> IntStream.range(0, listOfTitleTextValues
@@ -70,7 +71,6 @@ class CheckAllTitlesTest {
     void checkAllTittlesOnProjectsPage() {
         List<String> listOfTitleTextValues
                 = List.of("All","Automation","Api","Web App","Algorithm","Frontend","Desktop App");
-        navigate.toTheHomePage();
         utilStepsService.clickResume(Pages.PROJECTS);
         Serenity.reportThat("This is checking all tittles in Projects page",
                 () -> IntStream.range(0, listOfTitleTextValues

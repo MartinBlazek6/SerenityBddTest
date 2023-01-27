@@ -37,6 +37,12 @@ public class SearchService extends PageComponent {
     public Boolean titleIsDisplayed(String titleName){
        return findElementByText(titleName,"*").isEnabled();
     }
+    public String checkJobTitle(){
+        return getDriver().findElement(By.xpath("//*[@id=\"__next\"]/div/div[1]/p")).getText();
+    }
+    public String checkFullName(){
+        return getDriver().findElement(By.xpath("//*[@id=\"__next\"]/div/div[1]/h3")).getText();
+    }
 
     private List<String> getTextValuesFromTitles(List<String> checkList, String HTMLatribute) {
         List<String> listOfResumeTitles = new ArrayList<>();
