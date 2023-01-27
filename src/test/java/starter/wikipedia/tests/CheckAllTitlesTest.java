@@ -36,7 +36,7 @@ class CheckAllTitlesTest {
         List<String> maintTitles = new ArrayList<>();
         Arrays.stream(Pages.values()).forEach(title->maintTitles.add(title.name().substring(1).toLowerCase()));
         navigate.toTheHomePage();
-        utilStepsService.clickResume(Pages.RESUME);
+        utilStepsService.clickTitle(Pages.RESUME);
         Serenity.reportThat("This is checking if Resume,About and Projects buttons are displayed",
                 () -> maintTitles.forEach(title ->assertThat(searchService.titleIsDisplayed(title)).isTrue()));
     }
@@ -46,7 +46,7 @@ class CheckAllTitlesTest {
         List<String> listOfTitleTextValues
                 = List.of("Education", "Experience", "Language & Framework", "Tools & Softwares");
         navigate.toTheHomePage();
-        utilStepsService.clickResume(Pages.RESUME);
+        utilStepsService.clickTitle(Pages.RESUME);
         Serenity.reportThat("This is checking all tittles in Resume page",
                 () -> IntStream.range(0, listOfTitleTextValues
                         .size()).forEach(string
@@ -59,7 +59,7 @@ class CheckAllTitlesTest {
         List<String> listOfTitleTextValues
                 = List.of("Automation Testing", "Backend Development", "API Development", "Front End Development");
         navigate.toTheHomePage();
-        utilStepsService.clickResume(Pages.ABOUT);
+        utilStepsService.clickTitle(Pages.ABOUT);
         Serenity.reportThat("This is checking all tittles in About page",
                 () -> IntStream.range(0, listOfTitleTextValues
                         .size()).forEach(string
@@ -71,7 +71,7 @@ class CheckAllTitlesTest {
         List<String> listOfTitleTextValues
                 = List.of("All","Automation","Api","Web App","Algorithm","Frontend","Desktop App");
         navigate.toTheHomePage();
-        utilStepsService.clickResume(Pages.PROJECTS);
+        utilStepsService.clickTitle(Pages.PROJECTS);
         Serenity.reportThat("This is checking all tittles in Projects page",
                 () -> IntStream.range(0, listOfTitleTextValues
                         .size()).forEach(string
