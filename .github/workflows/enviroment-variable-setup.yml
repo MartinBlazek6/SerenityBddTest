@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: step 1
         ## Reference your environment variables
-        run: echo "The API key is:${{env.RUN_TEST_AGAINST_MASTER}}"
+        run: echo "The API key is:${{ secrets.RUN_TEST_AGAINST_MASTER }}"
 
   job2:
     runs-on: ubuntu-latest
     steps:
       - name: step 1
         ## Another way reference your environment variables
-        run: echo "The API key is:$RUN_TEST_AGAINST_MASTER"
+        run: echo "The API key is:${{ secrets.RUN_TEST_AGAINST_MASTER }}"
