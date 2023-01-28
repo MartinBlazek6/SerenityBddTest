@@ -5,6 +5,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    env:
+      ## Sets environment variable
+      RUN_TEST_AGAINST_MASTER: ${{ secrets.RUN_TEST_AGAINST_MASTER }}
 
 jobs:
   build:
