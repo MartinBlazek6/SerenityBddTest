@@ -14,12 +14,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 17
         uses: actions/setup-java@v1
         with:
           java-version: 17
+      - name: step 1
+        ## Reference your environment variables
+        run: echo "The API key is:${{ secrets.RUN_TEST_AGAINST_MASTER }}"
 
       - name: Build project with Maven
         run: mvn -B package --file pom.xml
