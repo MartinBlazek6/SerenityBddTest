@@ -10,8 +10,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      RUN_TEST_AGAINST_MASTER: ${{ secrets.RUN_TEST_AGAINST_MASTER }}
 
     steps:
     - uses: actions/checkout@v2
