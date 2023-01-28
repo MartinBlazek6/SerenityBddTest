@@ -1,8 +1,8 @@
-package starter.wikipedia.services;
+package partinPersonalWeb.guiTests.services;
 
 import net.serenitybdd.core.steps.UIInteractions;
 import net.thucydides.core.annotations.Step;
-import starter.wikipedia.models.Pages;
+import partinPersonalWeb.guiTests.models.Pages;
 
 public class UtilStepsService extends UIInteractions {
 

@@ -1,4 +1,4 @@
-package starter.wikipedia.services;
+package partinPersonalWeb.guiTests.services;
 
 import net.serenitybdd.core.pages.PageComponent;
 import net.serenitybdd.core.pages.WebElementFacade;

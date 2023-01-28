@@ -1,4 +1,4 @@
-package starter.wikipedia.urls;
+package partinPersonalWeb.guiTests.urls;
 
 import net.serenitybdd.core.steps.UIInteractions;
 import net.thucydides.core.annotations.Step;

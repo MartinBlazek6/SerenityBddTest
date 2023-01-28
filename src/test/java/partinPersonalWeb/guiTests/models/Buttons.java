@@ -1,4 +1,4 @@
-package starter.wikipedia.models;
+package partinPersonalWeb.guiTests.models;
 
 public enum Buttons {
     EMAILME,

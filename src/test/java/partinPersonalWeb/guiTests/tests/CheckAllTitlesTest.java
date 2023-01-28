@@ -1,4 +1,4 @@
-package starter.wikipedia.tests;
+package partinPersonalWeb.guiTests.tests;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
@@ -7,10 +7,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import starter.wikipedia.models.Pages;
-import starter.wikipedia.services.SearchService;
-import starter.wikipedia.services.UtilStepsService;
-import starter.wikipedia.urls.NavigateActions;
+import partinPersonalWeb.guiTests.models.Pages;
+import partinPersonalWeb.guiTests.services.SearchService;
+import partinPersonalWeb.guiTests.services.UtilStepsService;
+import partinPersonalWeb.guiTests.urls.NavigateActions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
