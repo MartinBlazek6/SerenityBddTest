@@ -4,7 +4,7 @@ on: [push]
 
 env:
   ## Sets environment variable
-  RUN_TEST_AGAINST_MASTER: ${{ secrets.RUN_TEST_AGAINST_MASTER }}
+  RUN_TEST_AGAINST_MASTER: ${ secrets.RUN_TEST_AGAINST_MASTER }
 
 jobs:
   build:
