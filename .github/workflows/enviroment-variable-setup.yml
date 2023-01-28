@@ -1,16 +1,25 @@
-name: Gradle Build
+name: env_tutorial
+## Triggers the workflow on when there is a push, or
+## pull request on the main branch
+on: [pull_request, push]
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+env:
+  ## Sets environment variable
+  RUN_TEST_AGAINST_MASTER: XXXXXXXXXXXX
 
 jobs:
-  build:
-
+  job1:
+    ## The type of runner that the job will run on,
+    ## here it runs on ubuntu latest
     runs-on: ubuntu-latest
-
     steps:
-        env:
-          RUN_TEST_AGAINST_MASTER: ${{ secrets.RUN_TEST_AGAINST_MASTER }}
+      - name: step 1
+        ## Reference your environment variables
+        run: echo "The API key is:${{env.RUN_TEST_AGAINST_MASTER}}"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step 1
+        ## Another way reference your environment variables
+        run: echo "The API key is:$RUN_TEST_AGAINST_MASTER"
