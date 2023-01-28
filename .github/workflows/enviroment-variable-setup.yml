@@ -5,7 +5,7 @@ on: [pull_request, push]
 
 env:
   ## Sets environment variable
-  RUN_TEST_AGAINST_MASTER: ${{env.RUN_TEST_AGAINST_MASTER}}
+  RUN_TEST_AGAINST_MASTER: ${{secrets.RUN_TEST_AGAINST_MASTER}}
 
 jobs:
   job1:
