@@ -37,11 +37,11 @@ class CheckAllTitlesTest {
     }
     @Test
     void searchForMainTittles() {
-        List<String> maintTitles = new ArrayList<>();
-        Arrays.stream(Pages.values()).forEach(title->maintTitles.add(title.name().substring(1).toLowerCase()));
+        List<String> mainTitles = new ArrayList<>();
+        Arrays.stream(Pages.values()).forEach(title->mainTitles.add(title.name().substring(1).toLowerCase()));
         utilStepsService.clickResume(Pages.RESUME);
         Serenity.reportThat("This is checking if Resume,About and Projects buttons are displayed",
-                () -> maintTitles.forEach(title ->assertThat(searchService.titleIsDisplayed(title)).isTrue()));
+                () -> mainTitles.forEach(title ->assertThat(searchService.titleIsDisplayed(title)).isTrue()));
     }
 
     @Test
