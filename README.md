@@ -5,7 +5,7 @@ UI test that tests my personal website.
 
 ## Demo of report
 
-![DEMO](https://martinpersonalweb.vercel.app/_next/image?url=%2Fimages%2FserenityBDDgif.gif&w=3840&q=75)
+https://martinpersonalweb.vercel.app/_next/image?url=%2Fimages%2FserenityBDDgif.gif&w=3840&q=75
 
 
 ## Viewing the reports
