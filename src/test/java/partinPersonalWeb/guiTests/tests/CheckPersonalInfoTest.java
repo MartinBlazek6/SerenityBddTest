@@ -18,7 +18,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SerenityJUnit5Extension.class)
 public class CheckPersonalInfoTest {
-    @Managed(driver = "chrome", options = "headless")
+    @Managed(driver = "chrome")
+//    @Managed(driver = "chrome", options = "headless")
     WebDriver driver;
 
     private NavigateActions navigate;
